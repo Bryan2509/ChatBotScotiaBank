@@ -23,21 +23,21 @@ slots:
       entity: documento
 
 
-  intents:
-  - saludar
-  - despedir
-  - afirmar
-  - denegar
-  - mood_feliz
-  - mood_triste
-  - bot_reconocer
-  - info_productos
-  - confirma_producto_activo
-  - confirma_producto_pasivo
-  - dar_nombre
-  - dar_documento
-  - preguntar_por_documento
-  - nombre_concepto
+intents:
+- saludar
+- despedir
+- afirmar
+- denegar
+- mood_feliz
+- mood_triste
+- bot_reconocer
+- info_productos
+- confirma_producto_activo
+- confirma_producto_pasivo
+- dar_nombre
+- dar_documento
+- preguntar_por_documento
+- nombre_concepto
 
 responses:
   utter_saludar:

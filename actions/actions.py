@@ -28,6 +28,7 @@ class ActionGuardarNombre(Action):
            tracker: Tracker,
            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
        print(tracker.get_slot('nombre'))
+       dispatcher.utter_template("preguntar_documento")
        return [SlotSet('nombre',tracker.latest_message['text'])]
    
 class ActionGuardarDocumento(Action):
@@ -38,6 +39,7 @@ class ActionGuardarDocumento(Action):
            tracker: Tracker,
            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
        print(tracker.get_slot('documento'))
+       dispatcher.utter_template("utter_como_te_ayudo")
        return [SlotSet('documento',tracker.latest_message['text'])]
 
 def datastore(nombre, nu_documento):
@@ -81,5 +83,8 @@ class dar_info_producto(Action):
         df = dfhoja1[dfhoja1['Concepto'].str.lower() == x]['Descripcion']
         if df.empty:
             df = dfhoja2[dfhoja2['Concepto'].str.lower() == x]['Descripcion']
+        
+        df = dict(df)
+        dispatcher.utter_elements(elements= df)
         
         return df

@@ -13,10 +13,8 @@ stories:
     entities:
      - nombre: "nombre"
   - action: action_guardar_nombre
-  - action: preguntar_documento
   - intent: dar_documento
   - action: action_guardar_documento
-  - action: utter_como_te_ayudo
 
 - story: ruta_triste_1
   steps:
@@ -32,10 +30,8 @@ stories:
     entities:
      - nombre: "nombre"
   - action: action_guardar_nombre
-  - action: preguntar_documento
   - intent: dar_documento
   - action: action_guardar_documento
-  - action: utter_como_te_ayudo
 
 - story: ruta_triste_2
   steps:
@@ -46,7 +42,6 @@ stories:
   - action: utter_te_ayude
   - intent: denegar
   - action: utter_despedir
-  #revisar flujo después
 
 - story: pregunta_productos_activo
   steps: 

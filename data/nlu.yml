@@ -126,7 +126,6 @@ nlu:
     - quiero ahorrar
     - ahorros
 
-#concepto: agrupa los conceptos y los tipos de productos
 - intent: nombre_concepto
   examples: |
     - quiero un [prestamo personal](concepto)
