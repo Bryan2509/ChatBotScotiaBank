@@ -1,0 +1,127 @@
+version: "3.1"
+
+nlu:
+
+- synonym: nombre
+  examples: |
+    - apodo
+    - nombre de pila
+    - primer nombre
+
+- regex: documento
+  examples: |
+    - \d{8,12}
+
+- intent: saludar
+  examples: |
+    - hey
+    - hola
+    - hi
+    - ola
+    - Buenas noches
+    - Buenos días
+    - Buenas tardes
+    - buenas
+
+- intent: despedir
+  examples: |
+    - chau
+    - bye
+    - Chao
+    - Buen día
+    - bye bye
+    - alamos
+    - hablamos
+    - Bueno ya me voy
+    - Te dejo
+
+- intent: dar_nombre
+  examples: |
+    - Me llamo [Bryan]{"entity": "nombre"} 
+    - Mi nombre es [Juan]{"entity": "nombre"}
+    - [Eduardo]{"entity": "nombre"}
+
+- intent: dar_documento
+  examples: |
+    - Mi dni es [12345678](documento)
+    - [12345678](documento)
+    - Es [12345678](documento)
+
+- intent: preguntar_por_documento
+  examples: |
+    - Para qué quieren mi dni?
+    - Y porque mi dni?
+    - No puedo brindar mi dni, es información privada
+
+- intent: afirmar
+  examples: |
+    - yes
+    - si
+    - por supuesto
+    - asi es
+    - correcto
+    - ci
+    - simon
+    - ce
+
+- intent: denegar
+  examples: |
+    - no
+    - not
+    - creo que no
+    - no hay forma
+
+- intent: mood_feliz
+  examples: |
+    - perfecto
+    - grandioso
+    - asombroso
+    - excelente
+    - Me encuentro feliz
+    - perfecto
+    - bien
+    - estoy feliz
+
+- intent: mood_triste
+  examples: |
+    - mi dia fue horrible
+    - estoy triste
+    - no me siento bien
+    - estoy enfermo
+    - super sad
+    - estoy mal
+    - sad
+
+- intent: bot_reconocer
+  examples: |
+    - eres un bot?
+    - eres un humano?
+    - eres una persona o robot?
+    - estoy hablando con un robot?
+    - estoy hablando con una persona?
+    - quien eres?
+
+- intent: info_productos
+  examples: |
+    - quiero info de los productos que ofrecen
+    - que productos tiene?
+    - que ofrecen?
+    - soy comerciante, qué me pueden dar?
+    - soy dependiente, qué me pueden dar?
+    - soy independiente, quiero un préstamo
+
+- intent: confirma_producto_activo
+  examples: |
+    - quiero un prestamo para comprar mi terreno
+    - quiero un prestamo para comprar un carro
+    - quiero un prestamo para construir mi casa
+    - quiero dinero rapido
+    - quiero dinero pero con interes bajo por favor
+
+- intent: confirma_producto_pasivo
+  examples: |
+    - quiero ahorrar mi dinero
+    - quiero ahorrar mi dinero pero a una tasa alta
+    - quiero ahorrar pero tenerlo disponible en cualquier momento
+    - quiero ahorrar
+    - ahorros

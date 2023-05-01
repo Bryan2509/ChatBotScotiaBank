@@ -1,0 +1,54 @@
+version: "3.1"
+
+stories:
+
+- story: ruta_feliz
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: mood_feliz
+  - action: utter_feliz
+  - action: utter_preguntar_nombre
+  - intent: dar_nombre
+  - action: action_guardar_nombre
+  - action: utter_como_te_ayudo
+
+- story: ruta_triste_1
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: mood_triste
+  - action: utter_frase
+  - action: utter_te_ayude
+  - intent: afirmar
+  - action: utter_feliz
+  - action: utter_preguntar_nombre
+  - intent: dar_nombre
+  - action: action_guardar_nombre
+
+- story: ruta_triste_2
+  steps:
+  - intent: saludar
+  - action: utter_saludar
+  - intent: mood_triste
+  - action: utter_frase
+  - action: utter_te_ayude
+  - intent: denegar
+  - action: utter_despedir
+  #revisar flujo después
+
+- story: pregunta_productos
+  steps: 
+  - intent: info_productos
+  - action: utter_producto_especifico
+  - intent: confirma_producto_activo
+  - action: utter_productos_activo
+  - action: utter_detallar_producto
+
+- story: pregunta_productos
+  steps: 
+  - intent: info_productos
+  - action: utter_producto_especifico
+  - intent: confirma_producto_pasivo
+  - action: utter_productos_pasivo
+  - action: utter_detallar_producto

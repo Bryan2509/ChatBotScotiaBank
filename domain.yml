@@ -1,0 +1,87 @@
+version: "3.1"
+
+entities:
+- nombre
+- documento
+
+slots:
+  nombre:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: nombre
+
+intents:
+  - saludar
+  - despedir
+  - afirmar
+  - denegar
+  - mood_feliz
+  - mood_triste
+  - bot_reconocer
+  - info_productos
+  - confirma_producto_activo
+  - confirma_producto_pasivo
+  - dar_nombre
+  - dar_documento
+  - preguntar_por_documento
+
+responses:
+  utter_saludar:
+  - text: "Hola! Como estás?"
+  - text: "Hola! Como te está yendo?"
+
+  utter_preguntar_nombre:
+  - text : "¿Me podrías brindar tu nombre?"
+  - text : "¿Cuál es tu nombre?"
+
+  utter_frase:
+  - text: "Las cosas nunca salen como uno quiere pero tenemos que seguir esforzandonos para lograr lo que querramos. \n Vamos! No te desanimes!"
+
+  utter_te_ayude:
+  - text: "Fui de tu ayuda?"
+  - text: "Te sientes mejor?"
+
+  utter_feliz:
+  - text: "Hey! Me alegra escuchar eso!!"
+
+  utter_como_te_ayudo:
+  - text: "Como puedo ayudarte?"
+  - text: "Como puedo servirte?"
+  - text: "Estoy aquí para ayudarte, ¿Qué necesitas?"
+
+  utter_despedir:
+  - text: "Adios"
+  - text: "Hasta pronto!"
+  - text: "Nos vemos pronto"
+
+  utter_soy_robot:
+  - text: "Hola mi nombre es Scott, el asistente virtual de ScotiaBank"
+
+
+  utter_producto_especifico:
+  - text: "Para poder ofrecerte una mejor recomendación, necesitas un préstamo o deseas ahorrar?" 
+
+  utter_productos_activo:
+  - text: "Tenemos: \n PRESTAMOS \n \t Préstamo Personal Online \n \t Adelanto de Sueldo \n \t Libre Disponibilidad \n \t Préstamo Personal para nuevos clientes \n \t Préstamo Convenio\n CRÉDITOS\n \t Hipotecario Familiar\n \t Hipotecario\n \t Hipotecario Emprendedor\n \t Mi Vivienda\n \t Mi Vivienda Emprendedor\n \t Vehicular"
+
+  utter_productos_pasivo:
+  - text: "Tenemos: \n \t Depósito a Plazo Digital \n \tFondos Mutuos \n \tScotia Bolsa"
+
+  utter_detallar_producto:
+  - text: "De estos productos, cuál se aproxima a tu necesidad? Para poder detallartelo."
+
+  utter_consentimiento:
+  - text: "Como Banco nos preocupamos por nuestros clientes, por ello requerimos el documento de identidad para saber con quién estamos comunicándonos."
+
+
+actions:
+- action_guardar_nombre
+- action_guardar_documento
+- action_store
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+

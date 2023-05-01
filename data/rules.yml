@@ -1,0 +1,19 @@
+version: "3.1"
+
+rules:
+
+- rule: decir adios cuando el usuario dice adios
+  steps:
+  - intent: despedir
+  - action: utter_despedir
+
+- rule: Decir 'Soy un robot' cuando el usuario lo pregunte
+  steps:
+  - intent: bot_reconocer
+  - action: utter_soy_robot
+
+- rule: Usuario pregunta porque da su nu_documento
+  steps:
+  - intent: preguntar_por_documento
+  - action: utter_consentimiento
+
