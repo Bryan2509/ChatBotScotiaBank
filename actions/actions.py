@@ -13,6 +13,9 @@ from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 import requests
 import sqlite3
+
+import pandas as pd
+import openpyxl 
 #import speech_recognition as sr
 #from translate import Translator
 #
@@ -60,3 +63,23 @@ class ActionStore(Action):
         print(x)
         print(y)
         return []
+    
+class dar_info_producto(Action):
+    
+    def name(self) -> Text:
+        return "action_dar_info_producto"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        dfhoja1 = pd.read_excel("BBDD Scotiabank.xlsx", engine='openpyxl', sheet_name='Hoja 1')
+        dfhoja2 = pd.read_excel("BBDD Scotiabank.xlsx", engine='openpyxl', sheet_name='Hoja 2')
+        
+        x = tracker.get_slot('concepto')
+        
+        df = dfhoja1[dfhoja1['Concepto'].str.lower() == x]['Descripcion']
+        if df.empty:
+            df = dfhoja2[dfhoja2['Concepto'].str.lower() == x]['Descripcion']
+        
+        return df

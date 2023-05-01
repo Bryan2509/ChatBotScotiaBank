@@ -125,3 +125,12 @@ nlu:
     - quiero ahorrar pero tenerlo disponible en cualquier momento
     - quiero ahorrar
     - ahorros
+
+#concepto: agrupa los conceptos y los tipos de productos
+- intent: nombre_concepto
+  examples: |
+    - quiero un [prestamo personal](concepto)
+    - quiero ahorrar en [depósito a plazo fijo](concepto)
+    - quiero un [crédito vehicular](concepto) 
+    - que significa [impuesto](concepto)
+    - que es [sobregiro](concepto)

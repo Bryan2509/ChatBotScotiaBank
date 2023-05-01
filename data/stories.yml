@@ -10,7 +10,12 @@ stories:
   - action: utter_feliz
   - action: utter_preguntar_nombre
   - intent: dar_nombre
+    entities:
+     - nombre: "nombre"
   - action: action_guardar_nombre
+  - action: preguntar_documento
+  - intent: dar_documento
+  - action: action_guardar_documento
   - action: utter_como_te_ayudo
 
 - story: ruta_triste_1
@@ -24,7 +29,13 @@ stories:
   - action: utter_feliz
   - action: utter_preguntar_nombre
   - intent: dar_nombre
+    entities:
+     - nombre: "nombre"
   - action: action_guardar_nombre
+  - action: preguntar_documento
+  - intent: dar_documento
+  - action: action_guardar_documento
+  - action: utter_como_te_ayudo
 
 - story: ruta_triste_2
   steps:
@@ -37,18 +48,22 @@ stories:
   - action: utter_despedir
   #revisar flujo después
 
-- story: pregunta_productos
+- story: pregunta_productos_activo
   steps: 
   - intent: info_productos
   - action: utter_producto_especifico
   - intent: confirma_producto_activo
   - action: utter_productos_activo
-  - action: utter_detallar_producto
+  - action: utter_pedir_producto
+  - intent: nombre_concepto
+  - action: action_dar_info_producto
 
-- story: pregunta_productos
+- story: pregunta_productos_pasivo
   steps: 
   - intent: info_productos
   - action: utter_producto_especifico
   - intent: confirma_producto_pasivo
   - action: utter_productos_pasivo
-  - action: utter_detallar_producto
+  - action: utter_pedir_producto
+  - intent: nombre_concepto
+  - action: action_dar_info_producto

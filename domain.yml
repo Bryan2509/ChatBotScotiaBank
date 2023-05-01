@@ -3,6 +3,7 @@ version: "3.1"
 entities:
 - nombre
 - documento
+- concepto
 
 slots:
   nombre:
@@ -10,8 +11,19 @@ slots:
     mappings:
     - type: from_entity
       entity: nombre
+  concepto:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: concepto
+  documento:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: documento
 
-intents:
+
+  intents:
   - saludar
   - despedir
   - afirmar
@@ -25,6 +37,7 @@ intents:
   - dar_nombre
   - dar_documento
   - preguntar_por_documento
+  - nombre_concepto
 
 responses:
   utter_saludar:
@@ -32,8 +45,12 @@ responses:
   - text: "Hola! Como te está yendo?"
 
   utter_preguntar_nombre:
-  - text : "¿Me podrías brindar tu nombre?"
-  - text : "¿Cuál es tu nombre?"
+  - text: "¿Me podrías brindar tu nombre?"
+  - text: "¿Cuál es tu nombre?"
+
+  utter_preguntar_documento:
+  - text: "Listo, ahora brindame tu numero de documento"
+  - text: "Brindame tu número de dni porfavor"
 
   utter_frase:
   - text: "Las cosas nunca salen como uno quiere pero tenemos que seguir esforzandonos para lograr lo que querramos. \n Vamos! No te desanimes!"
@@ -46,9 +63,9 @@ responses:
   - text: "Hey! Me alegra escuchar eso!!"
 
   utter_como_te_ayudo:
-  - text: "Como puedo ayudarte?"
-  - text: "Como puedo servirte?"
-  - text: "Estoy aquí para ayudarte, ¿Qué necesitas?"
+  - text: "Bien, ¿Como puedo ayudarte?, recuerda que solo cumplo un rol informativo más no operativo."
+  - text: "Ahora, ¿Como puedo servirte?, recuerda que solo cumplo un rol informativo más no operativo."
+  - text: "Estoy aquí para ayudarte, ¿Qué necesitas?, recuerda que solo cumplo un rol informativo más no operativo."
 
   utter_despedir:
   - text: "Adios"
@@ -66,9 +83,9 @@ responses:
   - text: "Tenemos: \n PRESTAMOS \n \t Préstamo Personal Online \n \t Adelanto de Sueldo \n \t Libre Disponibilidad \n \t Préstamo Personal para nuevos clientes \n \t Préstamo Convenio\n CRÉDITOS\n \t Hipotecario Familiar\n \t Hipotecario\n \t Hipotecario Emprendedor\n \t Mi Vivienda\n \t Mi Vivienda Emprendedor\n \t Vehicular"
 
   utter_productos_pasivo:
-  - text: "Tenemos: \n \t Depósito a Plazo Digital \n \tFondos Mutuos \n \tScotia Bolsa"
+  - text: "Tenemos: \n \tDepósito a Plazo Digital \n \tFondos Mutuos \n \tScotia Bolsa"
 
-  utter_detallar_producto:
+  utter_pedir_producto:
   - text: "De estos productos, cuál se aproxima a tu necesidad? Para poder detallartelo."
 
   utter_consentimiento:
@@ -79,6 +96,7 @@ actions:
 - action_guardar_nombre
 - action_guardar_documento
 - action_store
+- action_dar_info_producto
 
 session_config:
   session_expiration_time: 60
