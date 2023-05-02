@@ -28,21 +28,10 @@ class ActionGuardarNombre(Action):
            tracker: Tracker,
            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
        print(tracker.get_slot('nombre'))
-       dispatcher.utter_template("preguntar_documento")
+       dispatcher.utter_message(response = "utter_como_te_ayudo")
        return [SlotSet('nombre',tracker.latest_message['text'])]
-   
-class ActionGuardarDocumento(Action):
-    def name(self) -> Text:
-        return "action_guardar_documento"
-    
-    def run(self, dispatcher: CollectingDispatcher,
-           tracker: Tracker,
-           domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-       print(tracker.get_slot('documento'))
-       dispatcher.utter_template("utter_como_te_ayudo")
-       return [SlotSet('documento',tracker.latest_message['text'])]
 
-def datastore(nombre, nu_documento):
+def datastore(nombre):
     conn=sqlite3.connect('Scott.db')
     mycursor = conn.cursor()
     mycursor.execute("""CREATE TABLE IF NOT EXISTS user_scott (Name TEXT, nu_documento TEXT);""")
@@ -59,11 +48,9 @@ class ActionStore(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         x=tracker.get_slot('nombre')
-        y=tracker.get_slot('documento')
-        datastore(x,y)
+        datastore(x)
         dispatcher.utter_message("Gracias! La información fue guardada!.")
         print(x)
-        print(y)
         return []
     
 class dar_info_producto(Action):
@@ -85,6 +72,7 @@ class dar_info_producto(Action):
             df = dfhoja2[dfhoja2['Concepto'].str.lower() == x]['Descripcion']
         
         df = dict(df)
-        dispatcher.utter_elements(elements= df)
+        print(df)
+        dispatcher.utter_elements(elements = Dict[df['Description'], Any])
         
         return df

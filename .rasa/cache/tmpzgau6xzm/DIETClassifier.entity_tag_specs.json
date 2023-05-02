@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-concepto",
+      "2": "I-concepto",
+      "3": "L-concepto",
+      "4": "U-concepto",
+      "5": "B-documento",
+      "6": "I-documento",
+      "7": "L-documento",
+      "8": "U-documento",
+      "9": "B-nombre",
+      "10": "I-nombre",
+      "11": "L-nombre",
+      "12": "U-nombre",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-concepto": 1,
+      "I-concepto": 2,
+      "L-concepto": 3,
+      "U-concepto": 4,
+      "B-documento": 5,
+      "I-documento": 6,
+      "L-documento": 7,
+      "U-documento": 8,
+      "B-nombre": 9,
+      "I-nombre": 10,
+      "L-nombre": 11,
+      "U-nombre": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

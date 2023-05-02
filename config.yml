@@ -9,7 +9,7 @@ assistant_id: chatbot_ScotiaBank
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
 language: es
-
+ 
 pipeline:
 - name: "SpacyNLP"
   # language model to load

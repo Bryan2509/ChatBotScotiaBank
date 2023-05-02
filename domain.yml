@@ -38,6 +38,7 @@ intents:
 - dar_documento
 - preguntar_por_documento
 - nombre_concepto
+- cliente_no_entiende
 
 responses:
   utter_saludar:
@@ -49,7 +50,7 @@ responses:
   - text: "¿Cuál es tu nombre?"
 
   utter_preguntar_documento:
-  - text: "Listo, ahora brindame tu numero de documento"
+  - text: "Listo, ahora brindame tu numero de documento por favor"
   - text: "Brindame tu número de dni porfavor"
 
   utter_frase:
@@ -90,6 +91,9 @@ responses:
 
   utter_consentimiento:
   - text: "Como Banco nos preocupamos por nuestros clientes, por ello requerimos el documento de identidad para saber con quién estamos comunicándonos."
+
+  utter_cliente_no_entiende:
+  - text: ""
 
 
 actions:

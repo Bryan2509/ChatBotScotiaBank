@@ -2,16 +2,6 @@ version: "3.1"
 
 nlu:
 
-- synonym: nombre
-  examples: |
-    - apodo
-    - nombre de pila
-    - primer nombre
-
-- regex: documento
-  examples: |
-    - \d{8,12}
-
 - intent: saludar
   examples: |
     - hey
@@ -34,6 +24,8 @@ nlu:
     - hablamos
     - Bueno ya me voy
     - Te dejo
+    - adios
+    - Adios
 
 - intent: dar_nombre
   examples: |
@@ -47,11 +39,11 @@ nlu:
     - [12345678](documento)
     - Es [12345678](documento)
 
-- intent: preguntar_por_documento
-  examples: |
-    - Para qué quieren mi dni?
-    - Y porque mi dni?
-    - No puedo brindar mi dni, es información privada
+#- intent: preguntar_por_documento
+#  examples: |
+#    - Para qué quieren mi dni?
+#    - Y porque mi dni?
+#    - No puedo brindar mi dni, es información privada
 
 - intent: afirmar
   examples: |
@@ -63,6 +55,7 @@ nlu:
     - ci
     - simon
     - ce
+    - ok
 
 - intent: denegar
   examples: |
@@ -70,6 +63,7 @@ nlu:
     - not
     - creo que no
     - no hay forma
+    - nel
 
 - intent: mood_feliz
   examples: |
@@ -108,7 +102,7 @@ nlu:
     - que ofrecen?
     - soy comerciante, qué me pueden dar?
     - soy dependiente, qué me pueden dar?
-    - soy independiente, quiero un préstamo
+    - soy independiente, que servicios ofrecen?
 
 - intent: confirma_producto_activo
   examples: |
@@ -117,6 +111,7 @@ nlu:
     - quiero un prestamo para construir mi casa
     - quiero dinero rapido
     - quiero dinero pero con interes bajo por favor
+    - prestamo
 
 - intent: confirma_producto_pasivo
   examples: |
@@ -128,8 +123,21 @@ nlu:
 
 - intent: nombre_concepto
   examples: |
-    - quiero un [prestamo personal](concepto)
-    - quiero ahorrar en [depósito a plazo fijo](concepto)
-    - quiero un [crédito vehicular](concepto) 
     - que significa [impuesto](concepto)
     - que es [sobregiro](concepto)
+    - definicion de [impuesto](concepto)
+    - dime que es [sobregiro](concepto)
+    - para que sirve [seguro de desgravamen](concepto)
+    - que se entiende por [crédito](concepto)
+    - que es un [crédito](concepto)
+    - que es [impuesto](concepto)
+
+- intent: cliente_no_entiende
+  examples: |
+    - no te entiendo
+    - no te estoy entiendo
+    - sé más claro por favor
+    - idk
+    - y qué significa
+
+
