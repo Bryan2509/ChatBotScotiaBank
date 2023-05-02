@@ -13,7 +13,6 @@ stories:
     entities:
      - nombre: "nombre"
   - action: action_guardar_nombre
-  - action: action_store
 
 - story: ruta_triste_1
   steps:
@@ -49,7 +48,7 @@ stories:
   - action: utter_pedir_producto_a_detallar
   - intent: ingresa_producto_especifico
     entities:
-    - producto: "producto"
+      - producto: "producto"
   - action: action_guardar_producto
   - action: action_store
 
@@ -62,14 +61,14 @@ stories:
   - action: utter_pedir_producto_a_detallar
   - intent: ingresa_producto_especifico
     entities:
-    - producto: "producto"
+      - producto: "producto"
   - action: action_guardar_producto
   - action: action_store
 
 - story: pregunta_por_concepto
   steps:
   - intent: ingresa_concepto
-    entities:w
-    - concepto: "concepto"
+    entities:
+      - concepto: "concepto"
   - action: action_guardar_concepto
   - action: action_store

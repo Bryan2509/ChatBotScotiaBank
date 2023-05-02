@@ -41,6 +41,7 @@ intents:
 - ingresa_nombre
 - ingresa_concepto
 - cliente_no_entiende
+- ingresa_producto_especifico
 
 responses:
   utter_saludar:
@@ -101,6 +102,8 @@ actions:
 - action_guardar_nombre
 - action_store
 - action_dar_info_producto
+- action_guardar_producto
+- action_guardar_concepto
 
 session_config:
   session_expiration_time: 60

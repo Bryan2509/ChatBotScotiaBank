@@ -95,10 +95,9 @@ class dar_info_producto(Action):
         x = tracker.get_slot('producto')
         df = df[df['Concepto'].str.lower() == str.lower(x)]['Descripcion']
 
-        print(df)
+
         df = dict(df)
-        print(df)
-        dispatcher.utter_custom_message(elements = df)
+        #dispatcher.utter_custom_message(elements = df)
         return df
     
 class dar_info_concepto(Action):
@@ -115,9 +114,12 @@ class dar_info_concepto(Action):
         x = tracker.get_slot('concepto')
         
         df = df[df['Concepto'].str.lower() == str.lower(x)]['Descripcion']
-
-        print(df)
+        
         df = dict(df)
-        print(df)
-        dispatcher.utter_custom_message(elements = df)
         return df
+    
+    
+    # https://planetachatbot.com/aprende-forms-rasa-sencillo-chatbot-ejemplo/
+    
+
+
