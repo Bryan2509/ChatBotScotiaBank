@@ -59,7 +59,7 @@ class ActionGuardarConcepto(Action):
    
 #JUANCITO LO VA A VER 
 def datastore(nombre, producto, concepto):
-    conn=sqlite3.connect('chatbotScott.db')
+    conn=sqlite3.connect('chatbotScott')
     mycursor = conn.cursor()
     mycursor.execute("INSERT INTO USERS_SCOTT VALUES (?,?,?)",(nombre, producto, concepto))
     conn.commit()
@@ -73,6 +73,7 @@ class ActionStore(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
+        
         nombre=tracker.get_slot('nombre')
         producto=tracker.get_slot('producto')
         concepto=tracker.get_slot('concepto')
@@ -94,11 +95,11 @@ class dar_info_producto(Action):
         df = pd.read_excel("BBDD Scotiabank.xlsx", engine='openpyxl', sheet_name='Productos')
         x = tracker.get_slot('producto')
         df = df[df['Concepto'].str.lower() == str.lower(x)]['Descripcion']
+        print(df)
 
-
-        df = dict(df)
+        #df = dict(df)
         #dispatcher.utter_custom_message(elements = df)
-        return df
+        return {'descripcion' : df}
     
 class dar_info_concepto(Action):
     
@@ -114,12 +115,11 @@ class dar_info_concepto(Action):
         x = tracker.get_slot('concepto')
         
         df = df[df['Concepto'].str.lower() == str.lower(x)]['Descripcion']
-        
-        df = dict(df)
-        return df
+        print(df)
+        #df = dict(df)
+        return {'descripcion' : df}
     
     
-    # https://planetachatbot.com/aprende-forms-rasa-sencillo-chatbot-ejemplo/
     
 
 

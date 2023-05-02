@@ -4,6 +4,7 @@ entities:
 - nombre
 - concepto
 - producto
+- descripcion
 
 slots:
   nombre:
@@ -23,9 +24,11 @@ slots:
       entity: producto
 #  verif_producto:
 #    type: text
-#  descripcion:
-#    type: text
-
+  descripcion:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: descripcion
 
 intents:
 - saludar

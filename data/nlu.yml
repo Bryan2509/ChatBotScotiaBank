@@ -94,6 +94,9 @@ nlu:
     - soy comerciante, qué me pueden dar?
     - soy dependiente, qué me pueden dar?
     - soy independiente, que servicios ofrecen?
+    - que me pueden ofrecer?
+    - que tienen?
+    - que hay?
 
 - intent: confirma_producto_activo
   examples: |
