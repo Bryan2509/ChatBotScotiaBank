@@ -13,6 +13,11 @@ rules:
   - action: utter_soy_robot
   - action: utter_como_te_ayudo
 
+- rule: El cliente no entiende
+  steps:
+  - intent: cliente_no_entiende
+  - action: utter_cliente_no_entiende 
+
 #- rule: Usuario pregunta porque da su nu_documento
 #  steps:
 #  - intent: preguntar_por_documento

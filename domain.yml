@@ -2,8 +2,8 @@ version: "3.1"
 
 entities:
 - nombre
-- documento
 - concepto
+- producto
 
 slots:
   nombre:
@@ -16,8 +16,15 @@ slots:
     mappings:
     - type: from_entity
       entity: concepto
-  verif_producto:
+  producto:
     type: text
+    mappings:
+    - type: from_entity
+      entity: producto
+#  verif_producto:
+#    type: text
+#  descripcion:
+#    type: text
 
 
 intents:
@@ -92,7 +99,6 @@ responses:
 
 actions:
 - action_guardar_nombre
-- action_guardar_documento
 - action_store
 - action_dar_info_producto
 

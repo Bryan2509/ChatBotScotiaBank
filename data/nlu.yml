@@ -33,17 +33,6 @@ nlu:
     - Mi nombre es [Juan]{"entity": "nombre"}
     - [Eduardo]{"entity": "nombre"}
 
-#- intent: dar_documento
-#  examples: |
-#    - Mi dni es [12345678](documento)
-#    - [12345678](documento)
-#    - Es [12345678](documento)
-
-#- intent: preguntar_por_documento
-#  examples: |
-#    - Para qué quieren mi dni?
-#    - Y porque mi dni?
-#    - No puedo brindar mi dni, es información privada
 
 - intent: afirmar
   examples: |
@@ -133,6 +122,16 @@ nlu:
     - que se entiende por [crédito](concepto)
     - que es un [crédito](concepto)
     - que es [impuesto](concepto)
+
+- intent: ingresa_producto_especifico
+  examples:  |
+    - Quiero saber sobre [Prestamo Personal Online](producto)
+    - [Cuenta super](producto)
+    - como es el [Credito Vehicular](producto)
+    - [Credito Vehicular](producto)
+    - que es el [Credito Hipotecario](producto)
+    - [Credito Hipotecario](producto)
+    - Como es el [Adelanto de Sueldo](producto)
 
 - intent: cliente_no_entiende
   examples: |
