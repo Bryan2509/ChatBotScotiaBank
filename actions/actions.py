@@ -35,7 +35,7 @@ def datastore(nombre):
     conn=sqlite3.connect('Scott.db')
     mycursor = conn.cursor()
     mycursor.execute("""CREATE TABLE IF NOT EXISTS user_scott (Name TEXT, nu_documento TEXT);""")
-    mycursor.execute("INSERT INTO my_info VALUES (?,?)",(nombre, nu_documento))
+    mycursor.execute("INSERT INTO my_info VALUES (?)",(nombre))
     conn.commit()
     print(mycursor.rowcount,"registros insertados")
     

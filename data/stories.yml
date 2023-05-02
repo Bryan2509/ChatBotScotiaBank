@@ -9,56 +9,53 @@ stories:
   - intent: mood_feliz
   - action: utter_feliz
   - action: utter_preguntar_nombre
-  - intent: dar_nombre
+  - intent: ingresa_nombre
     entities:
      - nombre: "nombre"
   - action: action_guardar_nombre
-  - intent: dar_documento
-  - action: action_guardar_documento
 
 - story: ruta_triste_1
   steps:
   - intent: saludar
   - action: utter_saludar
   - intent: mood_triste
-  - action: utter_frase
+  - action: utter_decir_frase_motivadora
   - action: utter_te_ayude
   - intent: afirmar
   - action: utter_feliz
   - action: utter_preguntar_nombre
-  - intent: dar_nombre
+  - intent: ingresa_nombre
     entities:
      - nombre: "nombre"
   - action: action_guardar_nombre
-  - intent: dar_documento
-  - action: action_guardar_documento
+  - action: action_store
 
 - story: ruta_triste_2
   steps:
   - intent: saludar
   - action: utter_saludar
   - intent: mood_triste
-  - action: utter_frase
+  - action: utter_decir_frase_motivadora
   - action: utter_te_ayude
   - intent: denegar
   - action: utter_despedir
 
 - story: pregunta_productos_activo
   steps: 
-  - intent: info_productos
-  - action: utter_producto_especifico
+  - intent: pedir_info_general_productos
+  - action: utter_preguntar_activo_pasivo
   - intent: confirma_producto_activo
   - action: utter_productos_activo
-  - action: utter_pedir_producto
-  - intent: nombre_concepto
+  - action: utter_pedir_producto_a_detallar
+  - intent: ingresa_concepto
   - action: action_dar_info_producto
 
 - story: pregunta_productos_pasivo
   steps: 
-  - intent: info_productos
-  - action: utter_producto_especifico
+  - intent: pedir_info_general_productos
+  - action: utter_preguntar_activo_pasivo
   - intent: confirma_producto_pasivo
   - action: utter_productos_pasivo
-  - action: utter_pedir_producto
-  - intent: nombre_concepto
+  - action: utter_pedir_producto_a_detallar
+  - intent: ingresa_concepto
   - action: action_dar_info_producto

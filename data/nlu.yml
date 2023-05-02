@@ -27,17 +27,17 @@ nlu:
     - adios
     - Adios
 
-- intent: dar_nombre
+- intent: ingresa_nombre
   examples: |
     - Me llamo [Bryan]{"entity": "nombre"} 
     - Mi nombre es [Juan]{"entity": "nombre"}
     - [Eduardo]{"entity": "nombre"}
 
-- intent: dar_documento
-  examples: |
-    - Mi dni es [12345678](documento)
-    - [12345678](documento)
-    - Es [12345678](documento)
+#- intent: dar_documento
+#  examples: |
+#    - Mi dni es [12345678](documento)
+#    - [12345678](documento)
+#    - Es [12345678](documento)
 
 #- intent: preguntar_por_documento
 #  examples: |
@@ -75,6 +75,7 @@ nlu:
     - perfecto
     - bien
     - estoy feliz
+    - Me encuentro perfectamente bien
 
 - intent: mood_triste
   examples: |
@@ -85,8 +86,9 @@ nlu:
     - super sad
     - estoy mal
     - sad
+    - pipipipi
 
-- intent: bot_reconocer
+- intent: reconocer_bot
   examples: |
     - eres un bot?
     - eres un humano?
@@ -95,7 +97,7 @@ nlu:
     - estoy hablando con una persona?
     - quien eres?
 
-- intent: info_productos
+- intent: pedir_info_general_productos
   examples: |
     - quiero info de los productos que ofrecen
     - que productos tiene?
@@ -121,7 +123,7 @@ nlu:
     - quiero ahorrar
     - ahorros
 
-- intent: nombre_concepto
+- intent: ingresa_concepto
   examples: |
     - que significa [impuesto](concepto)
     - que es [sobregiro](concepto)

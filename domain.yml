@@ -16,11 +16,8 @@ slots:
     mappings:
     - type: from_entity
       entity: concepto
-  documento:
+  verif_producto:
     type: text
-    mappings:
-    - type: from_entity
-      entity: documento
 
 
 intents:
@@ -30,14 +27,12 @@ intents:
 - denegar
 - mood_feliz
 - mood_triste
-- bot_reconocer
-- info_productos
+- reconocer_bot
+- pedir_info_general_productos
 - confirma_producto_activo
 - confirma_producto_pasivo
-- dar_nombre
-- dar_documento
-- preguntar_por_documento
-- nombre_concepto
+- ingresa_nombre
+- ingresa_concepto
 - cliente_no_entiende
 
 responses:
@@ -49,16 +44,15 @@ responses:
   - text: "¿Me podrías brindar tu nombre?"
   - text: "¿Cuál es tu nombre?"
 
-  utter_preguntar_documento:
-  - text: "Listo, ahora brindame tu numero de documento por favor"
-  - text: "Brindame tu número de dni porfavor"
-
-  utter_frase:
+  utter_decir_frase_motivadora:
   - text: "Las cosas nunca salen como uno quiere pero tenemos que seguir esforzandonos para lograr lo que querramos. \n Vamos! No te desanimes!"
-
+  - text: "Todos nuestros sueños se pueden hacer realidad si tenemos el coraje de perseguirlos.\n Vamos! No te desanimes!"
+  - text: "La única diferencia entre un buen y un mal día es tu actitud.\n Vamos! No te desanimes!"
+  
   utter_te_ayude:
   - text: "Fui de tu ayuda?"
   - text: "Te sientes mejor?"
+  - text: "Te sientes mejor ahora?"
 
   utter_feliz:
   - text: "Hey! Me alegra escuchar eso!!"
@@ -72,28 +66,28 @@ responses:
   - text: "Adios"
   - text: "Hasta pronto!"
   - text: "Nos vemos pronto"
+  - text: "Bye"
 
   utter_soy_robot:
   - text: "Hola mi nombre es Scott, el asistente virtual de ScotiaBank"
+  - text: "Yo soy Scott, asistente virtual de ScotiaBank y estoy aquí para ayudarte"
 
-
-  utter_producto_especifico:
+  utter_preguntar_activo_pasivo:
   - text: "Para poder ofrecerte una mejor recomendación, necesitas un préstamo o deseas ahorrar?" 
 
   utter_productos_activo:
-  - text: "Tenemos: \n PRESTAMOS \n \t Préstamo Personal Online \n \t Adelanto de Sueldo \n \t Libre Disponibilidad \n \t Préstamo Personal para nuevos clientes \n \t Préstamo Convenio\n CRÉDITOS\n \t Hipotecario Familiar\n \t Hipotecario\n \t Hipotecario Emprendedor\n \t Mi Vivienda\n \t Mi Vivienda Emprendedor\n \t Vehicular"
+  - text: "Tenemos: \n PRESTAMOS \n \t 1. Préstamo Personal Online \n \t 2. Adelanto de Sueldo \n \t 3. Libre Disponibilidad \n \t 4. Préstamo Personal para nuevos clientes \n \t 5. Préstamo Convenio\n CRÉDITOS\n \t 6. Hipotecario Familiar\n \t 7. Hipotecario\n \t 8. Hipotecario Emprendedor\n \t 9. Mi Vivienda\n \t 10. Mi Vivienda Emprendedor\n \t 10. Vehicular"
 
   utter_productos_pasivo:
-  - text: "Tenemos: \n \tDepósito a Plazo Digital \n \tFondos Mutuos \n \tScotia Bolsa"
+  - text: "Tenemos: \n Depósitos e inversiones \n \t 1. Depósito a Plazo Digital \n \t 2. Fondos Mutuos \n \t3. Scotia Bolsa \n CUENTAS DE AHORRO \n \t 4. Súper Cuenta \n \t 5. Cuenta Power \n \t 6. Cuenta Sueldo \n \t 7. Cuenta Free \n \t 8. Cuenta Meta \n CUENTAS DE AHORRO EN AGENCIA \n \t 9. Cuenta CTS \n \t 10. Cuenta Kids \n \t 11. Ahorro Hipotecario \n \t 12. Cuenta Euros \n \t 13. Cuenta Corriente"
 
-  utter_pedir_producto:
-  - text: "De estos productos, cuál se aproxima a tu necesidad? Para poder detallartelo."
-
-  utter_consentimiento:
-  - text: "Como Banco nos preocupamos por nuestros clientes, por ello requerimos el documento de identidad para saber con quién estamos comunicándonos."
+  utter_pedir_producto_a_detallar:
+  - text: "De estos productos, cuál se aproxima mejor a tu necesidad? \n Para poder detallartelo."
 
   utter_cliente_no_entiende:
-  - text: ""
+  - text: "Quizá debas indicarme qué término o concepto no entendiste para poder explicarte de nuevo"
+  - text: "¿Qué parte no entendiste?"
+  - text: "Tranquilo, Dime qué parte no entendiste?"
 
 
 actions:
@@ -105,5 +99,7 @@ actions:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+
 
 

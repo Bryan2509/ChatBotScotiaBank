@@ -9,11 +9,12 @@ rules:
 
 - rule: Decir 'Soy un robot' cuando el usuario lo pregunte
   steps:
-  - intent: bot_reconocer
+  - intent: reconocer_bot
   - action: utter_soy_robot
+  - action: utter_como_te_ayudo
 
-- rule: Usuario pregunta porque da su nu_documento
-  steps:
-  - intent: preguntar_por_documento
-  - action: utter_consentimiento
+#- rule: Usuario pregunta porque da su nu_documento
+#  steps:
+#  - intent: preguntar_por_documento
+#  - action: utter_consentimiento
 
