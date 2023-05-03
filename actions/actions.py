@@ -13,13 +13,41 @@ from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 import requests
 import sqlite3
-
+import os
+import openai
+ 
 import pandas as pd
 import openpyxl 
 #import speech_recognition as sr
 #from translate import Translator
 #
 #
+
+openai.api_key = os.environ["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"]
+
+class ActionChatGPT(Action):
+
+    def name(self) -> Text:
+        return "action_chat_gpt"
+
+    async def run(self, dispatcher: CollectingDispatcher,
+                  tracker: Tracker,
+                  domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        message = tracker.latest_message['text']
+
+        response = openai.Completion.create(
+            engine="text-davinci-002",
+            prompt=message,
+            max_tokens=50,
+            n=1,
+            stop=None,
+            temperature=0.5
+        )
+
+        chat_gpt_response = response.choices[0].text.strip()
+        dispatcher.utter_message(text=chat_gpt_response)
+        return []
 
 #GUARDA EL NOMBRE PARA PODER ALMACENARLO EN LA BASE DE DATOS
 class ActionGuardarNombre(Action):
@@ -57,7 +85,7 @@ class ActionGuardarConcepto(Action):
        dispatcher.utter_message(response = "action_dar_info_concepto")
        return [SlotSet('concepto',tracker.latest_message['text'])]
    
-#JUANCITO LO VA A VER 
+#
 def datastore(nombre, producto, concepto):
     conn=sqlite3.connect('chatbotScott')
     mycursor = conn.cursor()
@@ -79,7 +107,7 @@ class ActionStore(Action):
         concepto=tracker.get_slot('concepto')
         
         datastore(nombre, producto, concepto)
-#        dispatcher.utter_message("Gracias! La información fue guardada!.")
+        dispatcher.utter_message("Gracias a ti!!")
         print(nombre, producto, concepto)
         return []
     
@@ -94,13 +122,17 @@ class dar_info_producto(Action):
         
         df = pd.read_excel("BBDD Scotiabank.xlsx", engine='openpyxl', sheet_name='Productos')
         x = tracker.get_slot('producto')
-        df = df[df['Concepto'].str.lower() == str.lower(x)]['Descripcion']
+        x = str(x)
+        df = df[df['Concepto'].str.lower() == x]
+        df = df['Descripcion']
         print(df)
 
         #df = dict(df)
-        #dispatcher.utter_custom_message(elements = df)
-        return {'descripcion' : df}
+        dispatcher.utter_message(text = df)
+        return []
     
+    
+
 class dar_info_concepto(Action):
     
     def name(self) -> Text:
@@ -113,11 +145,13 @@ class dar_info_concepto(Action):
         df = pd.read_excel("BBDD Scotiabank.xlsx", engine='openpyxl', sheet_name='Terminos')
         
         x = tracker.get_slot('concepto')
-        
-        df = df[df['Concepto'].str.lower() == str.lower(x)]['Descripcion']
+        x = str(x)
+        df = df[df['Concepto'].str.lower() == x]
+        df = df['Descripcion']
         print(df)
-        #df = dict(df)
-        return {'descripcion' : df}
+        
+        dispatcher.utter_message(text = df)
+        return []
     
     
     

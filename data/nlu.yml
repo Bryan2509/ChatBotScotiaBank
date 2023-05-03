@@ -29,10 +29,23 @@ nlu:
 
 - intent: ingresa_nombre
   examples: |
-    - Me llamo [Bryan]{"entity": "nombre"} 
-    - Mi nombre es [Juan]{"entity": "nombre"}
-    - [Eduardo]{"entity": "nombre"}
+    - Me llamo [Bryan](nombre)
+    - Mi nombre es [Juan](nombre)
+    - [Eduardo](nombre)
+    - [Juan](nombre)
+    - soy [Bryan](nombre)
+    - me llamo [Bryan](nombre)
 
+- intent: consulta_chat_gpt
+  examples: |
+    - consulta en chatgpt
+    - mejora la respuesta
+    - explicalo con otras palabras
+    - chatgpt
+    - otra respuesta
+    - explicalo mejor
+    - que dice chatgpt
+    - usa chatgpt
 
 - intent: afirmar
   examples: |
@@ -89,14 +102,21 @@ nlu:
 - intent: pedir_info_general_productos
   examples: |
     - quiero info de los productos que ofrecen
-    - que productos tiene?
+    - que productos tienen?
     - que ofrecen?
     - soy comerciante, qué me pueden dar?
     - soy dependiente, qué me pueden dar?
     - soy independiente, que servicios ofrecen?
-    - que me pueden ofrecer?
+    - que me pueden ofrecer
     - que tienen?
     - que hay?
+
+- intent: pregunta_concepto_general
+  examples: |
+    - hay un termino que no conozco
+    - quiero saber que significa un termino
+    - quiero saber sobre terminos
+    - termino
 
 - intent: confirma_producto_activo
   examples: |
@@ -144,4 +164,15 @@ nlu:
     - idk
     - y qué significa
 
-
+- intent: cliente_agradece
+  examples: |
+    - muchas gracias
+    - gracias
+    - ty
+    - estoy agradecido
+    - grasias
+    - gracias por tu paciencia
+    - c agradece
+    - thanks
+    - thank you
+    - gracias!

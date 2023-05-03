@@ -18,8 +18,17 @@ rules:
   - intent: cliente_no_entiende
   - action: utter_cliente_no_entiende 
 
+- rule: el cliente agradece
+  steps:
+  - intent: cliente_agradece
+  - action: utter_cliente_agradece
+  - action: action_store
 #- rule: Usuario pregunta porque da su nu_documento
 #  steps:
 #  - intent: preguntar_por_documento
 #  - action: utter_consentimiento
 
+- rule: Use ChatGPT action
+  steps:
+  - intent: consulta_chat_gpt
+  - action: action_chat_gpt 

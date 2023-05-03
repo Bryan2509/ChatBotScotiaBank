@@ -50,7 +50,6 @@ stories:
     entities:
       - producto: "producto"
   - action: action_guardar_producto
-  - action: action_store
 
 - story: pregunta_productos_pasivo
   steps: 
@@ -63,12 +62,12 @@ stories:
     entities:
       - producto: "producto"
   - action: action_guardar_producto
-  - action: action_store
 
 - story: pregunta_por_concepto
   steps:
+  - intent: pregunta_concepto_general
+  - action: utter_pregunta_concepto_general
   - intent: ingresa_concepto
     entities:
       - concepto: "concepto"
   - action: action_guardar_concepto
-  - action: action_store

@@ -45,6 +45,9 @@ intents:
 - ingresa_concepto
 - cliente_no_entiende
 - ingresa_producto_especifico
+- cliente_agradece
+- pregunta_concepto_general
+- consulta_chat_gpt
 
 responses:
   utter_saludar:
@@ -67,6 +70,10 @@ responses:
 
   utter_feliz:
   - text: "Hey! Me alegra escuchar eso!!"
+
+  utter_pregunta_concepto_general:
+  - text: "Puedes especificarme que termino no entiendes?"
+  - text: "Claro, dime el termino y te diré que significa"
 
   utter_como_te_ayudo:
   - text: "Bien, ¿Como puedo ayudarte?, recuerda que solo cumplo un rol informativo más no operativo."
@@ -100,6 +107,9 @@ responses:
   - text: "¿Qué parte no entendiste?"
   - text: "Tranquilo, Dime qué parte no entendiste?"
 
+  utter_cliente_agradece:
+  - text: "Gracias a ti!"
+  - text: "Es un placer ayudarte"
 
 actions:
 - action_guardar_nombre
@@ -107,11 +117,9 @@ actions:
 - action_dar_info_producto
 - action_guardar_producto
 - action_guardar_concepto
+- action_chat_gpt
+
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
-
-
-
