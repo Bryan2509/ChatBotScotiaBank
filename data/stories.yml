@@ -13,6 +13,7 @@ stories:
     entities:
      - nombre: "nombre"
   - action: action_guardar_nombre
+  - action: utter_como_te_ayudo
 
 - story: ruta_triste_1
   steps:
@@ -50,6 +51,8 @@ stories:
     entities:
       - producto: "producto"
   - action: action_guardar_producto
+  - action: action_recuperar_info_producto
+  - action: action_dar_info
 
 - story: pregunta_productos_pasivo
   steps: 
@@ -62,6 +65,8 @@ stories:
     entities:
       - producto: "producto"
   - action: action_guardar_producto
+  - action: action_recuperar_info_producto
+  - action: action_dar_info
 
 - story: pregunta_por_concepto
   steps:
@@ -71,3 +76,5 @@ stories:
     entities:
       - concepto: "concepto"
   - action: action_guardar_concepto
+  - action: action_recuperar_info_concepto
+  - action: action_dar_info

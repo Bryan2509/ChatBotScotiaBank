@@ -5,20 +5,26 @@ nlu:
 - intent: saludar
   examples: |
     - hey
+    - Hey
     - hola
+    - Hola
     - hi
+    - Hi
     - ola
+    - Ola
     - Buenas noches
     - Buenos días
     - Buenas tardes
     - buenas
+    - buen dia
+    - hola que tal
+    - Hola que tal
 
 - intent: despedir
   examples: |
     - chau
     - bye
     - Chao
-    - Buen día
     - bye bye
     - alamos
     - hablamos
@@ -35,6 +41,14 @@ nlu:
     - [Juan](nombre)
     - soy [Bryan](nombre)
     - me llamo [Bryan](nombre)
+    - me puedes decir [Eduardo](nombre)
+    - me puede llamar [Juan](nombre)
+    - me llamo [Juan](nombre)
+    - me llamo [Bryan](nombre)
+    - me llamo [Eduardo](nombre)
+    - me llamo [Ernesto](nombre)
+    - me puedes decir [Juan](nombre)
+    - soy [Juan](nombre)
 
 - intent: consulta_chat_gpt
   examples: |
@@ -78,6 +92,8 @@ nlu:
     - bien
     - estoy feliz
     - Me encuentro perfectamente bien
+    - todo ok
+    - ok
 
 - intent: mood_triste
   examples: |
@@ -102,6 +118,7 @@ nlu:
 - intent: pedir_info_general_productos
   examples: |
     - quiero info de los productos que ofrecen
+    - quiero info de productos
     - que productos tienen?
     - que ofrecen?
     - soy comerciante, qué me pueden dar?
@@ -117,6 +134,9 @@ nlu:
     - quiero saber que significa un termino
     - quiero saber sobre terminos
     - termino
+    - hay algo que no entiendo
+    - no entiendo la banca
+    - quiero empezar mi historial crediticio
 
 - intent: confirma_producto_activo
   examples: |
@@ -125,6 +145,7 @@ nlu:
     - quiero un prestamo para construir mi casa
     - quiero dinero rapido
     - quiero dinero pero con interes bajo por favor
+    - prestamos
     - prestamo
 
 - intent: confirma_producto_pasivo
@@ -142,9 +163,11 @@ nlu:
     - definicion de [impuesto](concepto)
     - dime que es [sobregiro](concepto)
     - para que sirve [seguro de desgravamen](concepto)
-    - que se entiende por [crédito](concepto)
-    - que es un [crédito](concepto)
+    - que se entiende por [credito](concepto)
+    - que es un [credito](concepto)
     - que es [impuesto](concepto)
+    - [impuesto](concepto)
+    - [sobregiro](concepto) 
 
 - intent: ingresa_producto_especifico
   examples:  |
@@ -155,6 +178,10 @@ nlu:
     - que es el [Credito Hipotecario](producto)
     - [Credito Hipotecario](producto)
     - Como es el [Adelanto de Sueldo](producto)
+    - [cuenta cts](producto)
+    - [credito hipotecario](producto)
+    - [adelanto de sueldo](producto)
+    - como es el [credito hipotecario](producto)
 
 - intent: cliente_no_entiende
   examples: |
@@ -163,6 +190,9 @@ nlu:
     - sé más claro por favor
     - idk
     - y qué significa
+    - ??
+    - ?
+    - ???
 
 - intent: cliente_agradece
   examples: |

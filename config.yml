@@ -21,7 +21,7 @@ pipeline:
 - name: "SpacyFeaturizer"
   # Specify what pooling operation should be used to calculate the vector of
   # the complete utterance. Available options: 'mean' and 'max'.
-  "pooling": "mean"
+  "pooling": "max"
 
 - name: "SpacyEntityExtractor"
   # dimensions to extract
@@ -30,6 +30,14 @@ pipeline:
 - name: DIETClassifier
   epochs: 100
   constrain_similarities: true
+
+- name: FallbackClassifier
+  threshold: 0.3
+  ambiguity_threshold: 0.1
+  # Define the default response message
+  default_responses:
+  - text: Lo siento, no estoy seguro de cómo ayudarte. ¿Podrías ser más específico?
+  - text: Lo siento, no te estoy entendiendo. ¿Podrías ser más específico?
 
 policies:
 - name: MemoizationPolicy
